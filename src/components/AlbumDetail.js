@@ -1,8 +1,6 @@
 import React from 'react';
-import { Image, Text, View, Linking } from 'react-native';
-import Card from './Card';
-import CardSection from './CardSection';
-import Button from './Button';
+import { StyleSheet, Image, Text, View, Linking } from 'react-native';
+import { Button, Card, CardSection } from './common';
 
 const AlbumDetail = ({album}) => {
   const { title, artist, image, thumbnail_image, url } = album; 
@@ -42,7 +40,7 @@ const AlbumDetail = ({album}) => {
   );
 }
 
-const styles = {
+const styles = StyleSheet.create({
   headerContentStyle: {
     flexDirection: 'column',
     justifyContent: 'space-around',
@@ -65,6 +63,6 @@ const styles = {
     flex: 1,
     width: null,
   }
-}
+});
 
 export default AlbumDetail;

@@ -1,5 +1,6 @@
+// @flow
 import React from 'react';
-import { Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
 const Header = ({title}) => {
   const { textStyle, viewStyle } = styles;
@@ -10,7 +11,7 @@ const Header = ({title}) => {
   )
 };
 
-const styles = {
+const styles = StyleSheet.create({
   textStyle: {
     fontSize: 20
   },
@@ -26,7 +27,6 @@ const styles = {
     elevation: 2,
     position: 'relative',
   }
-};
-
+});
 
 export default Header;
