@@ -5,9 +5,9 @@ import { Header } from './components/common';
 
 const App = () => (
   <View>
-    <Header title={'Albums'}/>
-    <AlbumList/>
+    <Header title="Albums" />
+    <AlbumList />
   </View>
-)
+);
 
 export default App;

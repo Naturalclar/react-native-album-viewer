@@ -1,3 +1,4 @@
+// @flow
 import React, { Component } from 'react';
 import { ScrollView } from 'react-native';
 import AlbumDetail from './AlbumDetail';
@@ -8,16 +9,15 @@ class AlbumList extends Component {
   componentWillMount() {
     const url = 'https://rallycoding.herokuapp.com/api/music_albums';
     fetch(url)
-    .then(response => response.json())
-    .then(data => this.setState({ albums: data }));
+      .then(response => response.json())
+      .then(data => this.setState({ albums: data }));
   }
 
   renderAlbums() {
-    return this.state.albums.map(album => {
-      return (
-        <AlbumDetail key={album.title} album={album}/>
-      );
-    });
+    const { albums } = this.state;
+    return albums.map(album => (
+      <AlbumDetail key={album.title} album={album} />
+    ));
   }
 
   render() {
@@ -26,7 +26,7 @@ class AlbumList extends Component {
         {this.renderAlbums()}
       </ScrollView>
     );
-  } 
+  }
 }
 
 export default AlbumList;
